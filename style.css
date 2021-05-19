@@ -12,7 +12,7 @@
   --grid-unit: 0.5rem;
   --font-weight-normal: 300;
   --font-weight-bold: 600;
-  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   --global-transition-time: 0.2s;
   --hard-box-shadow: 0.625rem 0.625rem 0 0 var(--yellow-darker);
 }
@@ -23,7 +23,7 @@ html {
 
 body {
   font-size: 1rem;
-  background-color: var(--offwhite);
+  background-color: white;
   font-family: var(--font-family);
   font-weight: var(--font-weight-normal);
   margin: 0;
@@ -76,17 +76,11 @@ a:visited {
 }
 
 .item__container {
-  box-shadow: rgba(0, 0, 0, 0.55) 0px 1.5rem 1.8rem; /*convert to rems...*/
-  background-color: var(--black);
-  border-radius: 0 0 var(--border-radius) var(--border-radius);
   margin-top: 2rem;
   margin-bottom: 3rem;
-  padding: 2rem;
   display: flex;
   flex-direction: column;
-  border-top: 0.5rem solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(90deg, var(--yellow) 0%, var(--pink) 100%);
+  border-bottom: #eee 1px solid;
 }
 
 .item__topRow {
@@ -97,16 +91,12 @@ a:visited {
   margin-bottom: 2rem;
 }
 
-.item__panther {
-  display: flex;
-}
-
 .item__date {
   display: flex;
   align-self: flex-start;
-  color: var(--yellow);
-  font-weight: var(--font-weight-bold);
-  font-size: 1.2rem;
+  color: var(--black);
+  font-weight: var(--font-weight-normal);
+  font-size: 1rem;
 }
 
 .item__img {
@@ -114,14 +104,13 @@ a:visited {
   width: 100%;
   height: auto;
   margin-bottom: 2rem;
-  border: 0.25rem solid var(--yellow);
 }
 
 .item__link {
   padding: 0.5rem 1.75rem;
   display: flex;
   margin: 1rem auto;
-  font-size: 1.4rem;
+  font-size: 1rem;
   background-color: #000000;
   font-weight: var(--font-weight-normal);
   color: var(--white);
@@ -141,11 +130,15 @@ a:visited {
 }
 
 .item__text {
-  color: var(--white);
+  color: black;
   font-weight: var(--font-weight-normal);
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
   line-height: 1.4;
+}
+
+.item__author {
+  margin-bottom: 1rem;
 }
 
 .footer {

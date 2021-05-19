@@ -17,9 +17,9 @@ const query = `{
         height
         description
       }
-      panther
       link
       linkText
+      author
     }
   }
 }`;
@@ -85,8 +85,8 @@ const itemClassNames = {
   date: "item__date",
   img: "item__img",
   link: "item__link",
-  panther: "item__panther",
   text: "item__text",
+  author: "item__author"
 };
 
 const renderItems = (items) => {
@@ -97,14 +97,6 @@ const renderItems = (items) => {
 
     const newTopRow = document.createElement("div");
     newTopRow.className = itemClassNames.topRow;
-
-    const newPantherEl = document.createElement("img");
-    newPantherEl.src = `./panthers/${item.panther}.svg`;
-    newPantherEl.alt = `${item.panther} panther emote`;
-    newPantherEl.setAttribute("width", "50");
-    newPantherEl.setAttribute("height", "50");
-    newPantherEl.className = itemClassNames.panther;
-    newTopRow.appendChild(newPantherEl);
 
     const newDateEl = document.createElement("time");
     newDateEl.setAttribute("datetime", formatPublishedDateForDateTime(item.sys.firstPublishedAt));
@@ -140,7 +132,12 @@ const renderItems = (items) => {
       newLinkEl.className = itemClassNames.link;
       newItemEl.appendChild(newLinkEl);
     }
-
+    if (item.author) {
+      const newAuthorEl = document.createElement("p");
+      newAuthorEl.innerText = "- " + item.author;
+      newAuthorEl.className = itemClassNames.author;
+      newItemEl.appendChild(newAuthorEl);
+    }
     microblogHolder.appendChild(newItemEl);
   });
 };

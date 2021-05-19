@@ -9,6 +9,7 @@ const query = `{
         firstPublishedAt
         id
       }
+      title
       text
       image {
         url
@@ -20,6 +21,7 @@ const query = `{
       link
       linkText
       author
+ 
     }
   }
 }`;
@@ -86,7 +88,8 @@ const itemClassNames = {
   img: "item__img",
   link: "item__link",
   text: "item__text",
-  author: "item__author"
+  author: "item__author",
+  title: "item__title"
 };
 
 const renderItems = (items) => {
@@ -97,6 +100,11 @@ const renderItems = (items) => {
 
     const newTopRow = document.createElement("div");
     newTopRow.className = itemClassNames.topRow;
+
+    const newTitleEl = document.createElement("p");
+    newTitleEl.innerText = item.title;
+    newTitleEl.className = itemClassNames.title;
+    newTopRow.appendChild(newTitleEl);
 
     const newDateEl = document.createElement("time");
     newDateEl.setAttribute("datetime", formatPublishedDateForDateTime(item.sys.firstPublishedAt));

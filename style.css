@@ -34,9 +34,7 @@ body {
   box-sizing: border-box;
 }
 
-a:visited {
-  color: var(--pink);
-}
+
 
 .container {
   margin: 1rem auto;

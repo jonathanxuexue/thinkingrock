@@ -134,7 +134,7 @@ const renderItems = (items) => {
     if (item.link) {
       const newLinkEl = document.createElement("a");
       newLinkEl.href = item.link;
-      newLinkEl.innerText = item.linkText || "View more";
+      newLinkEl.innerText = item.linkText || "link";
       newLinkEl.setAttribute("target", "_blank");
       newLinkEl.setAttribute("rel", "noopener noreferrer");
       newLinkEl.className = itemClassNames.link;

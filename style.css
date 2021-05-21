@@ -107,27 +107,17 @@ a:visited {
 }
 
 .item__link {
-  padding: 0.5rem 1.75rem;
   display: flex;
-  margin: 1rem auto;
   font-size: 1rem;
-  background-color: #000000;
+  margin-bottom: 1rem;
   font-weight: var(--font-weight-normal);
-  color: var(--white);
-  text-decoration: none;
-  transition: box-shadow var(--global-transition-time) ease 0s;
-  border: 0.25rem solid var(--yellow);
   cursor: pointer;
 }
 
 .item__link:hover, .item__link:focus, .item__link:active {
   outline-width: 0;
-  box-shadow: var(--hard-box-shadow);
 }
 
-.item__link:visited {
-  color: var(--white);
-}
 
 .item__text {
   color: black;

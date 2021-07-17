@@ -21,7 +21,6 @@ const query = `{
       link
       linkText
       author
- 
     }
   }
 }`;
